@@ -1,0 +1,40 @@
+{% extends('layout/user.html') %} {% block main_section %}
+<div class="col-md-9">
+    <div class="right-sidebar">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S No</th>
+                    <th scope="col">Dr Name</th>
+                    <th scope="col">Patient Name</th>
+                    <th scope="col">Patient No</th>
+                    <th scope="col">Appt. Date</th>
+                    <th scope="col">Appt. Status</th>
+                    <th scope="col">Fee</th>
+                    <th scope="col">Pement Status</th>
+                    <th scope="col">Book By</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <th scope="row">{{appointment.id}}</th>
+                    <td>{{appointment.doctor_name}}</td>
+                    <td>{{appointment.patient_name}}</td>
+                    <td>{{appointment.patient_phone_no}}</td>
+                    <td>{{appointment.appointment_date}}</td>
+                    <td></td>
+                    <td>{{appointment.doctor_fee}}</td>
+                    <td>{{appointment.fee_paid}}</td>
+                    <td>{{appointment.book_by}}</td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

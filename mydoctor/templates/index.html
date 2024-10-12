@@ -1,0 +1,53 @@
+{% extends('layout/layout.html') %}
+<!-- main section block -->
+{% block main_section %}
+<div class="container">
+    <div class="row py-3 justify-content-between">
+        <div class="col-md-4 filter">
+            filter your doctor
+        </div>
+        <div class="col-md-4 text-center">
+            <form class="filter-box">
+                <select name="city">
+                    <option value="">Select City</option>
+                    <option value="azamgarh">Azamgarh</option>
+                    <option value="jaunpur">Jaunpur</option>
+                    <option value="varanasi">Varanasi</option>
+                    <option value="lucknow">Lucknow</option>
+                </select>
+                <select name="city">
+                    <option value="">Select Speciality</option>
+                    <option value="heart">Heart</option>
+                    <option value="leaver">Leaver</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    {% for doctor in doctors %}
+    <div class="row align-items-center list-box" action="{{url_for('home')}}" method="post">
+        <!-- Doctor's photo column -->
+        <div class="col-md-3">
+            <img class="img-fluid " src="{{url_for('static',filename='images/doctor.jpg')}}" alt="Doctor's Photo">
+        </div>
+
+        <!-- Doctor's information column -->
+        <div class="col-md-6 list-box-content">
+            <h2>{{doctor.name}}</h2>
+            <p><strong>Contact:</strong> {{doctor.phone}}</p>
+            <p><strong>Email:</strong> {{doctor.email}}</p>
+            <p><strong>Education: </strong> {{doctor.qualification}}</p>
+            <p><strong>specialist: </strong> {{doctor.specialization}}</p>
+            <p><strong>Years of Experience:</strong> {{doctor.experience}}</p>
+            <P><i class="fas fa-map-marker"></i><strong>Address:</strong> {{doctor.address}}</P>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-sm btn-success mb-3" href="{{ url_for('book_appointment', doctor_id=doctor.id) }}">Book Appointment</a>
+            <a class="btn btn-sm btn-info">More Information</a>
+        </div>
+    </div>
+
+
+    {% endfor %}
+
+</div>
+{% endblock %}

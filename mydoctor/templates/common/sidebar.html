@@ -1,0 +1,36 @@
+<div class="col-md-3">
+    <div class="left-sidebar">
+        {% if session['user']['user_type'] == 2 %}
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('profile')}}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('my_appointment')}}">My Appointment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('change_password')}}">Change Password</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+            </li>
+        </ul>
+        {% endif %} {% if session['user']['user_type'] == 3 %}
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('profile')}}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('my_appointment')}}">My Appointment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('change_password')}}">Change Password</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+            </li>
+        </ul>
+        {% endif %}
+    </div>
+
+</div>

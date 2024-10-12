@@ -1,0 +1,32 @@
+{% extends('layout/layout.html') %} {% block main_section %}
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 myform-box">
+
+            <h1> Login Here</h1>
+            <form>
+
+                <div class="form-group mt-2">
+                    <label for="inputEmail">Email address or Phone No</label>
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Enter email">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+
+                <div class="form-group mt-2 text-center">
+                    <button type="submit" class="btn button-box">Login</button>
+                </div>
+                <div class="form-group mt-3 text-center">
+                    <p>If you forgot your password then <a href="{{url_for('forgot_password')}}">click here.</a></p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

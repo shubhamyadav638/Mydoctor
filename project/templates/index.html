@@ -1,0 +1,27 @@
+{% extends('layout/layout.html') %}
+<!-- main section block -->
+{% block main_section %}
+<div class="container">
+    <div class="row py-3 justify-content-between">
+        <div class="col-md-4 filter">
+            filter your doctor
+        </div>
+        <div class="col-md-4 text-center">
+            <form class="filter-box">
+                <select name="city">
+                    <option value="">Select City</option>
+                    <option value="azamgarh">Azamgarh</option>
+                    <option value="jaunpur">Jaunpur</option>
+                    <option value="varanasi">Varanasi</option>
+                    <option value="lucknow">Lucknow</option>
+                </select>
+                <select name="city">
+                    <option value="">Select Speciality</option>
+                    <option value="heart">Heart</option>
+                    <option value="leaver">Leaver</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

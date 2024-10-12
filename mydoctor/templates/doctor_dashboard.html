@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Doctor Appointment Dashboard</h1>
+    </header>
+    <main class="container my-4">
+        <section id="appointment-form">
+            <h2 class="mb-4">Schedule an Appointment</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="patientName">Patient Name:</label>
+                    <input type="text" class="form-control" id="patientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date:</label>
+                    <input type="date" class="form-control" id="appointmentDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Schedule</button>
+            </form>
+        </section>
+        <section id="appointment-list" class="mt-4">
+            <h2>Upcoming Appointments</h2>
+            <ul id="appointments" class="list-group"></ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

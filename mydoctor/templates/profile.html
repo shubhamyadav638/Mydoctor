@@ -1,0 +1,93 @@
+{% extends('layout/user.html') %} {% block main_section %}
+<div class="col-md-9">
+    <div class="right-sidebar">
+        {% if session['user']['user_type'] == 2 %}
+        <div class="row">
+            <div class="col-md-12">
+                <h3>profile</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post" enctype="multipart/form-data">
+                    <img class="img-fluid " src="{{url_for('static',filename = session['user'].profile_img)}}" alt="Doctor's Photo">
+                    <div class="mt-2">
+                        <input type="file" name="profile_image" />
+                    </div>
+
+                    <div class="mt-2">
+                        <input type="submit" name="submit" value="upload" />
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-8">
+                <div>
+                    <h2>name: shubham</h2>
+                    <p><strong>Education:</strong> mbbs</p>
+                    <p><strong>Years of Experience:</strong> 15</p>
+                    <p><strong>Contact:</strong> dr.shubhamyadav.com</p>
+                    <P><i class="fas fa-map-marker"> </i><strong>Address:</strong> Lalganj Azamgarh 276202, UP (India)</P>
+                </div>
+            </div>
+        </div>
+        {% endif %} {% if session['user']['user_type'] == 3 %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>profile</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post" enctype="multipart/form-data">
+                    <img class="img-fluid " src="{{url_for('static',filename = session['user'].profile_img)}}" alt="Doctor's Photo">
+                    <div class="mt-2">
+                        <input type="file" name="profile_image" />
+                    </div>
+
+                    <div class="mt-2">
+                        <input type="submit" name="submit" value="upload" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <h2>name: xyz</h2>
+                    <p><strong>Years of Experience:</strong> 15</p>
+                    <p><strong>Contact:</strong> +123-456-7890</p>
+                    <p><strong>Email:</strong> johndoe@example.com</p>
+                    <P><i class="fas fa-map-marker"> </i><strong>Address:</strong> Lalganj Azamgarh 276202, UP (India)</P>
+                </div>
+            </div>
+            <div>
+                <h4>Education</h4>
+                <p><strong>MD in Cardiology:</strong> Medical University</p>
+                <p><strong>MBBS:</strong>Medical College</p>
+            </div>
+
+            <div>
+                <h4>Experience</h4>
+                <p><strong>Senior Cardiologist:</strong>ABC Hospital</p>
+                <p><strong>Cardiology Resident:</strong>XYZ Medical Center</p>
+            </div>
+
+            <div>
+                <h4>Availability</h4>
+                <p><strong>Days:</strong> Monday to Friday</p>
+                <p><strong>Timings:</strong> 9:00 AM - 5:00 PM</p>
+            </div>
+
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="col d-flex justify-content-end">
+                <button class="btn btn-primary" type="submit">Edit</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}

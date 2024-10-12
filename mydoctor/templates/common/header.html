@@ -1,0 +1,35 @@
+<div class="my-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <a href="{{ url_for('home') }}" style=" text-decoration: none">
+
+                    <img class="logo" src="{{url_for('static',filename='images/logo-my-doctor.png')}}" />
+                </a>
+            </div>
+            <div class="col-md-7">
+                <form action="{{ url_for('home') }}" class="seach-form mt-3 w100">
+                    <input type="text" name="search_term" placeholder="search doctors by name" />
+                    <input type="submit" value="seach" />
+                </form>
+            </div>
+            <div class="col-md-3 p-2 right-top-button">
+                {% if 'user' in session %}
+                <div class="dropdown">
+                    <button class="avatar-box dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{url_for('static',filename=session['user'].profile_img)}}" width="40" height="40"/> {{ session['user'].name}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="{{url_for('profile')}}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('my_appointment')}}">My Appointments</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('change_password')}}">Change Password</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+                {% else %}
+                <a class="login-btn" href="{{url_for('login')}}">Login</a>
+                <a class="sign-btn" href="{{url_for('registration')}}">Signup</a> {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

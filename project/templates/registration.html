@@ -1,0 +1,44 @@
+{% extends('layout/layout.html') %} {% block main_section %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 myform-box">
+
+            <h1> Register Here</h1>
+            <form>
+                <div class="form-group mt-2">
+                    <label for="fname">Full Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="Enter your name">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="phone_name">Phone No</label>
+                    <input type="number" class="form-control" id="phone_name" placeholder="Enter your phone no">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="inputConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                </div>
+                <div class="form-group mt-2 text-center">
+                    <button type="submit" class="btn button-box">Sign Up</button>
+                </div>
+                <div class="form-group mt-3 text-center">
+                    <p>If you have alredy Registered then <a href="{{url_for('login')}}">click here.</a> for login</p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+ {% extends('layout/user.html') %} {% block main_section %}
+
+<div class="col-md-8">
+    <div class="profile-card text-center p-4">
+        <img src="doctor-profile-picture.jpg" alt="Doctor Name" class="profile-picture mb-3">
+        <h2>Dr. John Doe</h2>
+        <p class="text-muted">Cardiologist</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in leo nec dolor facilisis gravida.</p>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Education</h4>
+                <ul class="list-unstyled">
+                    <li>MD in Cardiology - Medical University</li>
+                    <li>MBBS - Medical College</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4>Experience</h4>
+                <ul class="list-unstyled">
+                    <li>Senior Cardiologist - ABC Hospital</li>
+                    <li>Cardiology Resident - XYZ Medical Center</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <h4>Contact Information</h4>
+        <p><strong>Location:</strong> Medical Center, City</p>
+        <p><strong>Contact:</strong> +123-456-7890</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+
+        <hr>
+
+        <h4>Availability</h4>
+        <p><strong>Days:</strong> Monday to Friday</p>
+        <p><strong>Timings:</strong> 9:00 AM - 5:00 PM</p>
+    </div>
+</div>
+
+{% endblock %}
